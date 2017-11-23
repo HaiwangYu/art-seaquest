@@ -2,18 +2,18 @@
 // Some statistics about an event. Not very complete ...
 //
 
-#include "art-seaquest/DataProducts/EventSummary.h"
+#include "Event.h"
 
 #include <ostream>
 
-tex::EventSummary::EventSummary():
+tex::Event::Event():
   nPositive_(0),
   nNegative_(0){
 }
 
 #ifndef __GCCXML__
 
-void tex::EventSummary::increment( int q){
+void tex::Event::increment( int q){
   if ( q > 0 ){
     ++nPositive_;
   } else{
@@ -22,7 +22,7 @@ void tex::EventSummary::increment( int q){
 }
 
 std::ostream& tex::operator<<(std::ostream& ost,
-                         const tex::EventSummary& summary){
+                         const tex::Event& summary){
   ost << "( Event Summary: Tracks: Postive: "
       << summary.nPositive()
       << " Negative: "

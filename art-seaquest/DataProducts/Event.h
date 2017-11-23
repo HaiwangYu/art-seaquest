@@ -1,5 +1,5 @@
-#ifndef SimpleDataProducts_EventSummary_h
-#define SimpleDataProducts_EventSummary_h
+#ifndef DataProducts_Event_h
+#define DataProducts_Event_h
 
 //
 // Some event summary statistics.  Very incomplete.
@@ -9,11 +9,11 @@
 
 namespace tex {
 
-  class EventSummary {
+  class Event {
 
   public:
 
-    EventSummary();
+    Event();
 
 #ifndef __GCCXML__
 
@@ -32,8 +32,8 @@ namespace tex {
 
 #ifndef __GCCXML__
   std::ostream& operator<<(std::ostream& ost,
-                           const tex::EventSummary& summary );
+                           const tex::Event& summary );
 #endif  // __GCCXML__
 
 }
-#endif  /* SimpleDataProducts_EventSummary_h */
+#endif  /* DataProducts_Event_h */
