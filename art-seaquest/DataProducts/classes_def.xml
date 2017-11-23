@@ -4,6 +4,6 @@
 <!--  -->
 
 <lcgdict>
- <class name="tex::EventSummary" classVersion="10"/>
- <class name="art::Wrapper<tex::EventSummary>"/>
+ <class name="tex::Event" classVersion="10"/>
+ <class name="art::Wrapper&lt;tex::Event&gt;"/>
 </lcgdict>
