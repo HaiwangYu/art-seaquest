@@ -2,7 +2,7 @@
 // Some statistics about an event. Not very complete ...
 //
 
-#include "art-workbook/SimpleDataProducts/EventSummary.h"
+#include "art-seaquest/DataProducts/EventSummary.h"
 
 #include <ostream>
 

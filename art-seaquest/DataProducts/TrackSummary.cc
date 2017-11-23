@@ -2,7 +2,7 @@
 // Some statistics about a track. Not very complete ...
 //
 
-#include "art-workbook/SimpleDataProducts/TrackSummary.h"
+#include "art-seaquest/DataProducts/TrackSummary.h"
 
 #include <ostream>
 
