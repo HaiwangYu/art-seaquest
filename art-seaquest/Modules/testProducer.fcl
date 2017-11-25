@@ -1,18 +1,9 @@
-#
-# Run the exercise with Summary_module.cc
-#
 
-#include "fcl/minimalMessageService.fcl"
-
-process_name : summary1
+process_name : TestProducer
 
 source : {
-  module_type : RootInput
-  fileNames   : [ "" ]
-}
-
-services : {
-  message : @local::default_message
+  module_type : EmptyEvent
+  maxEvents : 5
 }
 
 physics :{
@@ -34,7 +25,6 @@ outputs : {
 
   out1 : {
     module_type : RootOutput
-    fileName    : "output/summary1.art"
+    fileName    : "output/seaquest-event.art"
   }
-
 }
