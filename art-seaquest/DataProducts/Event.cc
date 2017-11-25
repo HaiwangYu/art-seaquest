@@ -5,31 +5,24 @@
 #include "Event.h"
 
 #include <ostream>
+#include <limits>
 
-tex::Event::Event():
-  nPositive_(0),
-  nNegative_(0){
+namespace seaquest {
+
+Event::Event():
+  _event_id(std::numeric_limits<int>::max()) {
 }
 
 #ifndef __GCCXML__
 
-void tex::Event::increment( int q){
-  if ( q > 0 ){
-    ++nPositive_;
-  } else{
-    ++nNegative_;
-  }
-}
-
-std::ostream& tex::operator<<(std::ostream& ost,
-                         const tex::Event& summary){
-  ost << "( Event Summary: Tracks: Postive: "
-      << summary.nPositive()
-      << " Negative: "
-      << summary.nNegative()
-      << ")";
+std::ostream& operator<<(std::ostream& ost,
+                         const seaquest::Event& event){
+  ost << " ( Event Summary: "
+      << " EventID: " << event.get_event_id()
+			<< " )";
 
   return ost;
+}
 }
 
 #endif // __GCCXML__

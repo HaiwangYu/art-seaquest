@@ -1,5 +1,5 @@
-#ifndef DataProducts_Event_h
-#define DataProducts_Event_h
+#ifndef SQ_DataProducts_Event_h
+#define SQ_DataProducts_Event_h
 
 //
 // Some event summary statistics.  Very incomplete.
@@ -7,7 +7,7 @@
 
 #include <iosfwd>
 
-namespace tex {
+namespace seaquest {
 
   class Event {
 
@@ -16,24 +16,18 @@ namespace tex {
     Event();
 
 #ifndef __GCCXML__
-
-    int nTracks()   const { return nPositive_ + nNegative_; }
-    int nPositive() const { return nPositive_; }
-    int nNegative() const { return nNegative_; }
-
-    void increment( int q);
-
 #endif  // __GCCXML__
+  	int get_event_id() const {return _event_id;}
+  	void set_event_id(const int a) {_event_id = a;}
 
   private:
-    int nPositive_;
-    int nNegative_;
+    int _event_id;
   };
 
 #ifndef __GCCXML__
   std::ostream& operator<<(std::ostream& ost,
-                           const tex::Event& summary );
+                           const seaquest::Event& event );
 #endif  // __GCCXML__
 
 }
-#endif  /* DataProducts_Event_h */
+#endif  /* SQ_DataProducts_Event_h */
