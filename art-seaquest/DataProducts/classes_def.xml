@@ -6,6 +6,8 @@
 <lcgdict>
  <class name="seaquest::Event" classVersion="1"/>
  <class name="art::Wrapper<seaquest::Event>"/>
+ <class name="art::Ptr<seaquest::Hit>"/>
+ <class name="std::vector<art::Ptr<seaquest::Hit> >"/>
  <class name="seaquest::Hit" classVersion="1"/>
  <class name="seaquest::HitCollection" classVersion="1"/>
  <class name="art::Wrapper<seaquest::HitCollection>"/>
