@@ -1,2 +1,2 @@
 add_subdirectory(DataProducts)
-#add_subdirectory(Modules)
+add_subdirectory(Modules)

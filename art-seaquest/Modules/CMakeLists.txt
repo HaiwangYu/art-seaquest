@@ -1,7 +1,6 @@
 art_make(
   MODULE_LIBRARIES
-    art-workbook_SimpleDataProducts
-    ${TOYEXPERIMENT_MCDATAPRODUCTS}
+    art-seaquest_DataProducts
     ${ART_FRAMEWORK_CORE}
     ${ART_FRAMEWORK_PRINCIPAL}
     ${ART_PERSISTENCY_COMMON}
