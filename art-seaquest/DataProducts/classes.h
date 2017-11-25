@@ -7,5 +7,8 @@
 
 #include "art/Persistency/Common/Wrapper.h"
 
+template class art::Ptr<seaquest::Hit>;
+template class std::vector<art::Ptr<seaquest::Hit> >;
+
 template class art::Wrapper<seaquest::Event>;
 template class art::Wrapper<seaquest::HitCollection>;

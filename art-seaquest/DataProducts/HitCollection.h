@@ -11,7 +11,7 @@
 
 namespace seaquest {
 
-  typedef std::vector<Hit> HitCollection;
+  typedef std::vector<seaquest::Hit> HitCollection;
 
 }
 
