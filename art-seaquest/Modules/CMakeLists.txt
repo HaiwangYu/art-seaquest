@@ -1,9 +1,4 @@
 art_make(
-  LIB_LIBRARIES
-    ${ART_FRAMEWORK_SERVICES_REGISTRY}
-    ${ART_UTILITIES}
-    ${CETLIB}
-    ${Boost_SYSTEM_LIBRARY}
   MODULE_LIBRARIES
 	art-seaquest_DataProducts
 	${ART_FRAMEWORK_CORE}
