@@ -26,12 +26,12 @@ Event::Event():
 
 std::ostream& operator<<(std::ostream& ost,
                          const seaquest::Event& event){
-  ost << "---seaquest::Event:--------------------------" << std::endl;
+  ost << std::endl << " ----------- seaquest::Event: -----------" << std::endl;
   ost
-  << "runID: " << event.get_run_id()
-  << "spillID: " << event.get_spill_id()
-  << "eventID: " << event.get_event_id()
-  << "codaEventID: " << event.get_coda_event_id()
+  << " runID: " << event.get_run_id()
+  << " spillID: " << event.get_spill_id()
+  << " eventID: " << event.get_event_id()
+  << " codaEventID: " << event.get_coda_event_id()
   << std::endl;
   for(int i = seaquest::Event::NIM1; i<=seaquest::Event::NIM5; ++i) {
 	  ost <<"NIM"<<i<<": " << event.get_trigger(static_cast<seaquest::Event::TriggerMask>(i)) << "; ";
