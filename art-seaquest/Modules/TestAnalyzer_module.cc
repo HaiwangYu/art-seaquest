@@ -3,6 +3,8 @@
 //
 
 #include "art-seaquest/DataProducts/Event.h"
+#include "art-seaquest/DataProducts/Hit.h"
+#include "art-seaquest/DataProducts/HitCollection.h"
 
 #include "art/Framework/Core/EDAnalyzer.h"
 #include "art/Framework/Core/ModuleMacros.h"
@@ -24,7 +26,7 @@ namespace seaquest {
 
   private:
 
-    art::InputTag summaryTag_;
+    art::InputTag _inputTag;
 
   };
 
@@ -32,13 +34,23 @@ namespace seaquest {
 
 seaquest::TestAnalyzer::TestAnalyzer(fhicl::ParameterSet const& pset ):
   art::EDAnalyzer(pset),
-  summaryTag_(pset.get<std::string>("summaryTag")){
+  _inputTag(pset.get<std::string>("inputTag")){
 }
 
 void seaquest::TestAnalyzer::analyze( art::Event const& event){
 
-  auto summary = event.getValidHandle<seaquest::Event>(summaryTag_);
-  std::cout << event.id() << " " << *summary << std::endl;
+	std::cout << "==============================================" << std::endl;
+	std::cout << event.id() << std::endl;
+
+	//< Read seaquest::Event
+  auto event_header = event.getValidHandle<seaquest::Event>(_inputTag);
+  std::cout << *event_header << std::endl;
+
+  //< Read seaquest::HitCollection
+  auto hit_collection = event.getValidHandle<seaquest::HitCollection>(_inputTag);
+  for(auto hit : *hit_collection) {
+  	std::cout << *hit << std::endl;
+  }
 
 }
 

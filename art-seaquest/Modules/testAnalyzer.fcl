@@ -11,7 +11,7 @@ physics :{
   analyzers : {
     testAnalyzer : {
       module_type : TestAnalyzer
-      summaryTag  : "testProducer"
+      inputTag  : "testProducer"
     }
   }
 
