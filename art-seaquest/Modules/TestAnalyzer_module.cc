@@ -49,7 +49,7 @@ void seaquest::TestAnalyzer::analyze( art::Event const& event){
   //< Read seaquest::HitCollection
   auto hit_collection = event.getValidHandle<seaquest::HitCollection>(_inputTag);
   for(auto hit : *hit_collection) {
-  	std::cout << *hit << std::endl;
+  	std::cout << hit << std::endl;
   }
 
 }
