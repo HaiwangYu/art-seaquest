@@ -40,9 +40,11 @@ seaquest::TestProducer::TestProducer(fhicl::ParameterSet const& pset ):
 
 void seaquest::TestProducer::produce( art::Event& event){
 
+	std::cout << "==============================================" << std::endl;
+	std::cout << event.id() << std::endl;
   //< Add dummy seaquest::event
   auto event_header = std::make_unique<seaquest::Event>();
-  std::cout << event.id() << " " << *event_header << std::endl;
+  std::cout << *event_header << std::endl;
   event.put( std::move(event_header) );
 
   //< Add dummy seaquest::HitCollection
@@ -50,7 +52,7 @@ void seaquest::TestProducer::produce( art::Event& event){
   for(int i=0; i<2; ++i){
   	auto hit = std::make_unique<seaquest::Hit>();
   	hit->set_hit_id(i);
-    std::cout << event.id() << " " << *hit << std::endl;
+    std::cout << *hit << std::endl;
   	hit_collection->push_back(*hit);
   }
   event.put( std::move(hit_collection) );
