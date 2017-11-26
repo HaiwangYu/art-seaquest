@@ -52,7 +52,7 @@ void seaquest::TestProducer::produce( art::Event& event){
   	hit->set_hit_id(i);
   	hit_collection.push_back(*hit);
   }
-  event.put( std::move(hit_collection) );
+  event.put( std::move(&hit_collection) );
 
 }
 
