@@ -39,9 +39,6 @@ namespace seaquest {
     float        get_drift_distance() const                {return _drift_distance;}
     void         set_drift_distance(const float a)         {_drift_distance=a;}
 
-    float        get_pos() const                           {return _pos;}
-    void         set_pos(const float a)                    {_pos=a;}
-
     bool         is_in_time() const                        {return (_flag&(seaquest::Hit::InTime)) != 0;}
     void         set_in_time(const bool a)                 {a? (_flag |= seaquest::Hit::InTime) : (_flag &= ~seaquest::Hit::InTime);}
 
@@ -58,7 +55,6 @@ namespace seaquest {
 
     float _tdc_time;               //<
     float _drift_distance;         //<
-    float _pos;                    //<
 
     unsigned short _flag;           //<
   };
