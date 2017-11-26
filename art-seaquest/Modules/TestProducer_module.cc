@@ -42,7 +42,8 @@ void seaquest::TestProducer::produce( art::Event& event){
 
 	std::cout << "==============================================" << std::endl;
 	std::cout << event.id() << std::endl;
-  //< Add dummy seaquest::event
+
+	//< Add dummy seaquest::event
   auto event_header = std::make_unique<seaquest::Event>();
   std::cout << *event_header << std::endl;
   event.put( std::move(event_header) );
