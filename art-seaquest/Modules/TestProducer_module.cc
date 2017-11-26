@@ -3,6 +3,8 @@
 //
 
 #include "art-seaquest/DataProducts/Event.h"
+#include "art-seaquest/DataProducts/Hit.h"
+#include "art-seaquest/DataProducts/HitCollection.h"
 
 #include "art/Framework/Core/EDProducer.h"
 #include "art/Framework/Core/ModuleMacros.h"
@@ -32,18 +34,25 @@ namespace seaquest {
 
 seaquest::TestProducer::TestProducer(fhicl::ParameterSet const& pset ):
   fitsTag_(pset.get<std::string>("fitsTag")){
-
   produces<seaquest::Event>();
+  produces<seaquest::HitCollection>();
 }
 
 void seaquest::TestProducer::produce( art::Event& event){
 
-  // Create empty output data produc.
+  //< Add dummy seaquest::event
   auto event_out = std::make_unique<seaquest::Event>();
-
   std::cout << event.id() << " " << *event_out << std::endl;
-
   event.put( std::move(event_out) );
+
+  //< Add dummy seaquest::HitCollection
+  seaquest::HitCollection hit_collection;
+  for(int i=0; i<2; ++i){
+  	auto hit = std::make_unique<seaquest::Hit>();
+  	hit->set_hit_id(i);
+  	hit_collection.push_back(hit);
+  }
+  event.put( std::move(hit_collection) );
 
 }
 
