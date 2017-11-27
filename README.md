@@ -14,8 +14,12 @@ Prototype package for the SeaQuest experiment in the FermiLab **art** framework.
 
 - [ups](ups): package dependency descriptions; files needed for the **buildtool**
 
-### Related Repositories
+### Related
 
-- [**art**](https://cdcvs.fnal.gov/redmine/projects/art): http://cdcvs.fnal.gov/projects/art
-- [**art-workbook**](https://cdcvs.fnal.gov/redmine/projects/art-workbook): http://cdcvs.fnal.gov/projects/art-workbook
-- [**toyExperiment**](): http://cdcvs.fnal.gov/projects/toyExperiment
+| Name | redmine page | Repository (read-only) |
+|:---:|:---|:---|
+| **art** | https://cdcvs.fnal.gov/redmine/projects/art | http://cdcvs.fnal.gov/projects/art |
+| **art-workbook** | https://cdcvs.fnal.gov/redmine/projects/art-workbook | http://cdcvs.fnal.gov/projects/art-workbook |
+| **toyExperiment** | | http://cdcvs.fnal.gov/projects/toyExperiment |
+
+- **art/LArSoft Course**: https://indico.fnal.gov/event/9928/overview, 3-7 August 2015
