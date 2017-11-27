@@ -2,7 +2,7 @@
 
 Prototype package for the SeaQuest experiment in the FermiLab **art** framework.
 
-Folder description:
+### Folder description:
 
 - [art-seaquest](art-seaquest): source code:
   - DataProducts: art data products - interface objects that holds data 
@@ -13,3 +13,9 @@ Folder description:
   - Need UPS products: **art** (v1_17_07), **cetbuildtools**
 
 - [ups](ups): package dependency descriptions; files needed for the **buildtool**
+
+### Related Repositories
+
+- [**art**](https://cdcvs.fnal.gov/redmine/projects/art): http://cdcvs.fnal.gov/projects/art
+- [**art-workbook**](https://cdcvs.fnal.gov/redmine/projects/art-workbook): http://cdcvs.fnal.gov/projects/art-workbook
+- [**toyExperiment**](): http://cdcvs.fnal.gov/projects/toyExperiment
