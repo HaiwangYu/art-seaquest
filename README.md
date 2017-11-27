@@ -17,7 +17,7 @@ Prototype package for the SeaQuest experiment in the FermiLab **art** framework.
 ### Related
 
 | Name | redmine page | Repository (read-only) |
-|:---:|:---|:---|
+|:---|:---|:---|
 | **art** | https://cdcvs.fnal.gov/redmine/projects/art | http://cdcvs.fnal.gov/projects/art |
 | **art-workbook** | https://cdcvs.fnal.gov/redmine/projects/art-workbook | http://cdcvs.fnal.gov/projects/art-workbook |
 | **toyExperiment** | | http://cdcvs.fnal.gov/projects/toyExperiment |
