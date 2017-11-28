@@ -10,7 +10,6 @@
 #include "art/Framework/Core/ModuleMacros.h"
 #include "art/Framework/Principal/Event.h"
 
-#include "CLHEP/Random/RanluxEngine.h"
 #include "CLHEP/Random/RandFlat.h"
 
 #include <iostream>
@@ -29,14 +28,21 @@ namespace seaquest {
 
   private:
 
-    art::InputTag fitsTag_;
+    /// Seed for the random number engine
+    int _seed;
+
+    /// Need service: art::RandomNumberGenerator
+    art::RandomNumberGenerator::base_engine_t & _engine;
+
 
   };
 
 }
 
 seaquest::TestProducer::TestProducer(fhicl::ParameterSet const& pset ):
-  fitsTag_(pset.get<std::string>("fitsTag")){
+  _seed(pset.get<int>("seed")),
+  _engine(createEngine(_seed))
+{
   produces<seaquest::Event>();
   produces<seaquest::HitCollection>();
 }
@@ -51,7 +57,7 @@ void seaquest::TestProducer::produce( art::Event& event){
   std::cout << *event_header << std::endl;
   event.put( std::move(event_header) );
 
-  CLHEP::RandFlat rand_flat(CLHEP::RanluxEngine());
+  CLHEP::RandFlat rand_flat(_engine);
   //< Add dummy seaquest::HitCollection
   auto hit_collection = std::make_unique<seaquest::HitCollection>();
   for(int i=0; i<1052; ++i){

@@ -3,14 +3,18 @@ process_name : TestProducer
 
 source : {
   module_type : EmptyEvent
-  maxEvents : 5
+  maxEvents : 100
+}
+
+services : {
+    RandomNumberGenerator : {} 
 }
 
 physics :{
   producers: {
     testProducer : {
       module_type : TestProducer
-      fitsTag     : "fitter"
+      seed        : 0
     }
   }
 
