@@ -50,7 +50,7 @@ void seaquest::TestProducer::produce( art::Event& event){
 
   //< Add dummy seaquest::HitCollection
   auto hit_collection = std::make_unique<seaquest::HitCollection>();
-  for(int i=0; i<2; ++i){
+  for(int i=0; i<1052; ++i){
   	auto hit = std::make_unique<seaquest::Hit>();
   	hit->set_hit_id(i);
     std::cout << *hit << std::endl;
