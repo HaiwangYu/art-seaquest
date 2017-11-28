@@ -49,14 +49,14 @@ namespace seaquest {
     void         set_trigger_mask(const bool a)            {a? (_flag |= seaquest::Hit::TriggerMask) : (_flag &= ~seaquest::Hit::TriggerMask);}
 
   private:
-    int _hit_id;                   //< unique identifier within container
-    short _detector_id;            //<
-    short _element_id;             //< element id
+    int _hit_id;                   ///< hitID
+    short _detector_id;            ///< detectorID
+    short _element_id;             ///< elementID
 
-    float _tdc_time;               //<
-    float _drift_distance;         //<
+    float _tdc_time;               ///< tdcTime
+    float _drift_distance;         ///< driftDistance
 
-    unsigned short _flag;           //<
+    unsigned short _flag;           ///< trigger bits
   };
 
 #ifndef __GCCXML__
