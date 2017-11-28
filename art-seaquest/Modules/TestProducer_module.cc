@@ -10,7 +10,7 @@
 #include "art/Framework/Core/ModuleMacros.h"
 #include "art/Framework/Principal/Event.h"
 
-#include "TRandom3.h"
+#include "CLHEP/Random/RandFlat.h"
 
 #include <iostream>
 #include <vector>
@@ -50,19 +50,19 @@ void seaquest::TestProducer::produce( art::Event& event){
   std::cout << *event_header << std::endl;
   event.put( std::move(event_header) );
 
-	TRandom3 rand;
+  CLHEP::RandFlat rand_flat(CLHEP::HepRandomEngine());
   //< Add dummy seaquest::HitCollection
   auto hit_collection = std::make_unique<seaquest::HitCollection>();
   for(int i=0; i<1052; ++i){
   	auto hit = std::make_unique<seaquest::Hit>();
   	hit->set_hit_id(i);
-  	hit->set_detector_id(static_cast<short>(1000*rand.Rndm()));
-  	hit->set_element_id(static_cast<short>(1000*rand.Rndm()));
-  	hit->set_tdc_time(static_cast<float>(1000*rand.Rndm()));
-  	hit->set_drift_distance(static_cast<float>(1000*rand.Rndm()));
-  	hit->set_in_time(static_cast<bool>(rand.Rndm()>0.5));
-  	hit->set_hodo_mask(static_cast<bool>(rand.Rndm()>0.5));
-  	hit->set_trigger_mask(static_cast<bool>(rand.Rndm()>0.5));
+  	hit->set_detector_id(static_cast<short>(1000*rand_flat.fire()));
+  	hit->set_element_id(static_cast<short>(1000*rand_flat.fire()));
+  	hit->set_tdc_time(static_cast<float>(1000*rand_flat.fire()));
+  	hit->set_drift_distance(static_cast<float>(1000*rand_flat.fire()));
+  	hit->set_in_time(static_cast<bool>(rand_flat.fire()>0.5));
+  	hit->set_hodo_mask(static_cast<bool>(rand_flat.fire()>0.5));
+  	hit->set_trigger_mask(static_cast<bool>(rand_flat.fire()>0.5));
     std::cout << *hit << std::endl;
   	hit_collection->push_back(*hit);
   }
