@@ -19,10 +19,18 @@ In a FermiLab VM.
 ```
 mkdir [path-to-build-dir]
 cd [path-to-build-dir]
-cp [path-to-source]/art-seaquest/scripts/* .
+cp [path-to-source]/art-seaquest/scripts/*.sh .
 source setup.sh
 source setup_build.sh
 buildtool -j 4
+```
+
+### Run
+In a test folder
+```
+cp [path-to-source]/art-seaquest/Modules/*.fcl .
+art -c testProducer.fcl
+art -c testAnalyzer.fcl
 ```
 
 ### Related
