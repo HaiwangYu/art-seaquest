@@ -14,6 +14,16 @@ Prototype package for the SeaQuest experiment in the FermiLab **art** framework.
 
 - [ups](ups): package dependency descriptions; files needed for the **buildtool**
 
+### Build
+In a FermiLab VM. 
+```
+mkdir [path-to-build-dir]
+cd [path-to-build-dir]
+cp [path-to-source]/art-seaquest/scripts/* .
+source setup.sh
+source setup_build.sh
+```
+
 ### Related
 
 | Name | redmine page | Repository (read-only) |
