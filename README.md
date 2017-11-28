@@ -2,6 +2,8 @@
 
 Prototype package for the SeaQuest experiment in the FermiLab **art** framework.
 
+[Doxygen page](https://haiwangyu.github.io/seaquest-offline-doc/index.html)
+
 ### Folder description:
 
 - [art-seaquest](art-seaquest): source code:
