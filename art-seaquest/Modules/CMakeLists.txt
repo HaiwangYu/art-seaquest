@@ -1,6 +1,7 @@
 art_make(
   MODULE_LIBRARIES
 	art-seaquest_DataProducts
+	${CLHEP}
 	${ART_FRAMEWORK_CORE}
 	${ART_FRAMEWORK_PRINCIPAL}
 	${ART_PERSISTENCY_COMMON}
