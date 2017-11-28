@@ -22,6 +22,7 @@ cd [path-to-build-dir]
 cp [path-to-source]/art-seaquest/scripts/* .
 source setup.sh
 source setup_build.sh
+buildtool -j 4
 ```
 
 ### Related
