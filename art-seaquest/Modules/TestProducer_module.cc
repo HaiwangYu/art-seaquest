@@ -50,7 +50,7 @@ void seaquest::TestProducer::produce( art::Event& event){
   std::cout << *event_header << std::endl;
   event.put( std::move(event_header) );
 
-  CLHEP::RandFlat rand_flat(CLHEP::HepRandomEngine());
+  CLHEP::RandFlat rand_flat(CLHEP::RanluxEngine());
   //< Add dummy seaquest::HitCollection
   auto hit_collection = std::make_unique<seaquest::HitCollection>();
   for(int i=0; i<1052; ++i){
